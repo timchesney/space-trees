@@ -1,0 +1,28 @@
+---
+label: Projects
+hide_body: false
+fields:
+- name: layout
+  type: text
+  config:
+    required: false
+  label: Layout
+  hidden: true
+  default: "../../layouts/Project.astro"
+- name: info
+  type: include
+  config: {}
+  template: basic-page
+  label: Info
+- name: projectContent
+  type: blocks
+  label: Project Content
+  template_types:
+  - blocks
+  config:
+    min: 
+    max: 
+  description: Sections of project images
+pages:
+- src/pages/projects/government-website.md
+- src/pages/projects/test-project.md

@@ -1,0 +1,16 @@
+---
+label: Generic Page
+hide_body: false
+fields:
+- name: info
+  type: include
+  config: {}
+  template: basic-page
+  label: Info
+- name: layout
+  type: text
+  config:
+    required: false
+  label: Layout
+  hidden: true
+  default: "../layouts/Page.astro"

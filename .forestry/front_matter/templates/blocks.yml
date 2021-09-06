@@ -1,0 +1,22 @@
+---
+label: Blocks
+hide_body: true
+fields:
+- name: textfield
+  type: text
+  config:
+    required: false
+  label: Text
+  description: A single line of text
+- name: image_set
+  type: image_gallery
+  config: {}
+  label: Image Set
+  description: A set of related images
+- name: color
+  type: color
+  label: Colour
+  config:
+    required: false
+    color_format: Hex
+  description: Section colour

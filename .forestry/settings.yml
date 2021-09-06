@@ -1,0 +1,33 @@
+---
+new_page_extension: md
+auto_deploy: false
+admin_path: "/public/admin"
+webhook_url: 
+sections:
+- type: directory
+  path: src/pages/projects
+  label: Projects
+  create: documents
+  match: "*.md"
+  templates:
+  - projects
+- type: directory
+  path: src/pages
+  label: Basic Pages
+  create: documents
+  match: "*.md"
+  new_doc_ext: md
+  templates:
+  - generic-page
+upload_dir: public/assets
+public_path: "/assets"
+front_matter_path: ''
+use_front_matter_path: false
+file_template: ":filename:"
+build:
+  preview_output_directory: src
+  install_dependencies_command: yarn install
+  preview_docker_image: forestryio/node:12
+  mount_path: "/srv"
+  working_dir: "/srv"
+  instant_preview_command: yarn dev --port 8080
