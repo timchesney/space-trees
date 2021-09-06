@@ -1,0 +1,53 @@
+---
+
+import Master from '../../layouts/Master.astro'
+
+const metaTitle = 'Projects'
+
+const allItems = Astro.fetchContent('./*.md');
+
+---
+
+<Master metaTitle = {metaTitle} >
+    <header> 
+        <p class="projects-intro">A smattering of projects for your viewing pleasure. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Rutrum quisque non tellus orci ac auctor augue mauris augue.</p>
+    </header>
+
+    <main>
+        {allItems.map( item => (
+            <h1>{item.title}</h1>
+        ))}        
+    </main>
+</Master>
+
+<style>
+    header {
+    display: flex;
+    min-height: 450px;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 var(--g-padding);
+    }
+
+    main {
+        margin-top: var(--g-padding);
+        width: 80vw; 
+        max-width: 1000px;
+    }
+    h1 {
+        margin-bottom: 0.5em;
+        line-height: 1em;
+    }
+
+    p.projects-intro {
+        font-size: 1.5em;
+        font-weight: bold;
+    }
+
+    @media only screen and (min-width: 1000px) {
+        p.projects-intro {
+            width: 50vw;
+        }
+    }
+
+</style>

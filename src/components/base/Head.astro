@@ -1,0 +1,14 @@
+---
+    import Data from '../../data/SiteData.json';
+    const { metaTitle=`${Data.siteDescription}`, metaDescription=`${Data.siteDescription}` } = Astro.props;
+
+---
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{Data.siteTitle} {metaTitle}</title>
+<meta name="description" content="{metaDescription}">
+
+<link rel="icon" type="image/png" href="/favicon.png">
+<!-- This just auto compiles from the scss so we link to the css -->
+<link rel="stylesheet" href="{Astro.resolve('../../styles/global.css')}">

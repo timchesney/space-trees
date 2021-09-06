@@ -1,0 +1,16 @@
+---
+import Master from './Master.astro'
+import PageHeader from '../components/PageHeader.astro'
+
+const {content} = Astro.props;
+
+---
+
+<Master metaTitle = {content.metaTitle}>
+    <PageHeader title={content.title} subTitle={content.subTitle} />
+    <main>
+        <slot />
+    </main>    
+</Master>
+
+

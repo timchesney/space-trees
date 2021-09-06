@@ -1,0 +1,65 @@
+---
+const path = Astro.request.url.pathname;
+const page = (path.split('/')[1]=='' ? 'home' : path.split('/')[1]);
+const navPages = [
+    {
+        url: '/projects',
+        title: 'Projects'
+    },
+    {
+        url: '/notes',
+        title: 'Notes'
+    }
+]
+---
+
+<nav class={page}>
+    <a href="/"><h2>Dawnwards</h2></a>
+    <ul>
+        {navPages.map(({ title, url }) => (
+            <li>
+                <a class={(url.split('/')[1]=='' ? 'home' : url.split('/')[1])} href={url}>{title}</a>
+            </li>
+        ))}
+    </ul>
+</nav>
+
+<style>
+
+    nav {
+        height: 60px;
+        padding: 0 var(--g-padding);
+        display: grid; 
+        justify-content: center;
+        align-items: center;
+        grid-template-columns: 1fr auto
+    }
+
+    ul {
+        padding: 0;
+        list-style: none;
+    }
+
+    li {
+        display: inline-block;
+        margin: 0 0.5em;
+    }
+    
+    li:first-child {
+            margin-left: 0;
+        }
+
+    a {
+        padding: 0.25em 0em;
+        text-decoration: none;
+        color: #FE657C;
+    }
+
+    @media only screen and (min-width: 1000px) {
+        li {
+            margin: 0 1.5em;
+        }
+    }
+
+
+</style>

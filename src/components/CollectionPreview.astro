@@ -1,0 +1,27 @@
+---
+const {title, itemURL, imageURL} = Astro.props; 
+---
+
+<article>
+    <div class="collection-image" style={`background-image: url(${imageURL})`}></div>
+    <h2><a href={itemURL}>{title}</a></h2>
+</article>
+
+<style lang="scss"> 
+.collection-image {
+    width: 100%; 
+    aspect-ratio: 1;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+article h2 {
+    margin-top: 0.5em;
+    a {
+        text-decoration: none;
+        border-bottom: 4px dashed #818CF8;
+    }
+}
+
+    
+
+</style>

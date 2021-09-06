@@ -1,0 +1,43 @@
+---
+import Master from './Master.astro'
+import CollectionHeader from '../components/CollectionHeader.astro'
+
+const {content} = Astro.props;
+const {projectContent} = content;
+
+console.log(content)
+
+---
+
+<Master metaTitle = {content.metaTitle}>
+    <CollectionHeader title={content.title} headerImage={content.headerImage} />
+    <main>
+        <h1>{content.subTitle}</h1>
+        <slot />
+    </main>  
+        { projectContent.map(item => (
+            <section class="project-group" style={`background: ${item.color};`}>
+            <h2>{item.textfield}</h2>
+                { item.image_set.map(image=> (
+                    <img src={image} />
+                ))}
+            </section>
+        ))}  
+</Master>
+
+<style lang="scss">
+    .project-group {
+        padding: 2em 10vw;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 2vw;
+        row-gap: 4vw;
+    }
+    .project-group img {
+        max-width: 100%;
+        grid-row: 2;
+        aspect-ratio: 1 / 1;
+    }
+</style>
+
+

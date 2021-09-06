@@ -1,0 +1,34 @@
+---
+
+---
+
+<footer>
+<p><a href="/contact">Contact</a></p>
+<p>&copy; Tim Chesney 2021</p>
+<slot/>
+</footer>
+
+<style lang="scss">
+    footer {
+        padding: var(--g-padding);
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        justify-items: end;
+
+        a,
+        a:visited {
+    color: #fe657c;
+    text-decoration: none;
+    border-bottom: 1px dashed #fe657c;
+    &:hover {
+      border-bottom: 2px solid;
+    }
+  }
+    }
+    p:first-child {
+        grid-column: 3;
+    }
+    p:last-child {
+        grid-column: 4;
+    }
+</style>

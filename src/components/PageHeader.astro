@@ -1,0 +1,26 @@
+---
+const { title, subTitle } = Astro.props
+
+---
+
+<header>
+        <h1>{title}</h1>
+        <h2 class="subhead">{subTitle}</h2>
+</header>
+
+<style lang="scss"> 
+
+header {
+    display: flex;
+    width: clamp(75vw, 75vw, 100vw);
+    min-height: 450px;
+    justify-content: center;
+    flex-direction: column;
+    margin: var(--g-padding) var(--g-padding);
+
+    h1 {
+        margin-bottom: 0.4em;
+    }
+}
+
+</style>
